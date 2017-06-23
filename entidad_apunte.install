@@ -1,0 +1,93 @@
+<?php
+
+function entidad_apunte_schema() {
+$schema['entidad_apunte'] = array(
+    'description' => 'Table for apuntes',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Identifier',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'field_num_equip_apunt' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 2,
+      ),
+      'field_fech_apunte' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 8,
+      ),
+	  'field_ejercicio' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 8,
+      ),
+      'field_num_apunte' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'field_fech_intro' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 8,
+      ),
+      'field_num_proyecto' => array(
+        'type' => 'varchar',
+        'not mull' => TRUE,
+        'length' => 4,
+      ),
+      'field_cuenta' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 9,
+      ),
+      'field_descrip_apunte' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'field_debe' => array(
+        'type' => 'float',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'field_haber' => array(
+        'type' => 'float',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'field_prorrata' => array(
+        'type' => 'float',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'field_processed' => array(
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ),
+      'md5' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

@@ -1,0 +1,36 @@
+<?php
+
+function entidad_apunte_entity_info() {
+  $return = array(
+    'laEntidad' => array(
+      'label' => t('Entidad apunte'),
+      'controller class' => 'EntityAPIController',
+      'base table' => 'entidad_apunte',
+      'entity keys' => array('id' => 'entityID'),
+    ),
+
+  );
+  return $return;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function entidad_apunte_views_api() {
+  return array(
+      'api' => '3',
+      'path' => drupal_get_path('module','entidad_apunte'). '/views',
+  );
+}
+
+  //-------------------------------------------------------------------------------------------|
+  //  Implementation of hook_menu, this provides a front-end for the importer
+  //-------------------------------------------------------------------------------------------|
+function entidad_apunte_uninstall() {
+
+  
+  // TODO The drupal_(un)install_schema functions are called automatically in D7.
+   drupal_uninstall_schema('entidad_apunte');
+}
+	
+	

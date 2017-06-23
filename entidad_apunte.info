@@ -1,0 +1,11 @@
+name = Entidad apunte
+description = Entidad para guardar los apuntes.
+package = Ejemplos
+version = "7.x-1.0"
+core = 7.x
+
+dependencies[] = entity
+dependencies[] = views
+
+
+files[] = views/entidad_apunte.views.inc”
